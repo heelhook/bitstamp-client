@@ -15,5 +15,16 @@ module Bitstamp::HTTP
 
       call(request_uri('bitcoin_withdrawal'), 'POST', params)
     end
+
+    def xrp_withdrawal(nonce: nil, amount:, address:, destination_tag:nil)
+      params = {
+        nonce:   nonce,
+        amount:  amount,
+        address: address,
+        destination_tag: destination_tag
+      }
+
+      call(request_uri('v2', 'xrp_withdrawal'), 'POST', params)
+    end
   end
 end

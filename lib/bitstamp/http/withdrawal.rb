@@ -26,5 +26,16 @@ module Bitstamp::HTTP
 
       call(request_uri('v2', 'xrp_withdrawal'), 'POST', params)
     end
+
+    def litecoin_withdrawal(nonce: nil, amount:, address:)
+      params = {
+        nonce:   nonce,
+        amount:  amount,
+        address: address,
+        destination_tag: destination_tag
+      }
+
+      call(request_uri('v2', 'ltc_withdrawal'), 'POST', params)
+    end
   end
 end

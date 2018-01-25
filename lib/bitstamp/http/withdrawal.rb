@@ -31,8 +31,7 @@ module Bitstamp::HTTP
       params = {
         nonce:   nonce,
         amount:  amount,
-        address: address,
-        destination_tag: destination_tag
+        address: address
       }
 
       call(request_uri('v2', 'ltc_withdrawal'), 'POST', params)

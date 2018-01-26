@@ -36,5 +36,15 @@ module Bitstamp::HTTP
 
       call(request_uri('v2', 'ltc_withdrawal'), 'POST', params)
     end
+
+    def ethereum_withdrawal(nonce: nil, amount:, address:)
+      params = {
+        nonce:   nonce,
+        amount:  amount,
+        address: address
+      }
+
+      call(request_uri('v2', 'eth_withdrawal'), 'POST', params)
+    end
   end
 end

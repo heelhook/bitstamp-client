@@ -37,5 +37,11 @@ module Bitstamp::HTTP
 
       call(request_uri('v2', 'bch_address'), 'POST', params)
     end
+
+    def bch_deposit_address(nonce: nil)
+      params = { nonce: nonce }
+
+      call(request_uri('v2', 'bch_address'), 'POST', params)
+    end
   end
 end

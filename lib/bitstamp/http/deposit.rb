@@ -15,8 +15,6 @@ module Bitstamp::HTTP
     def xrp_deposit_address(nonce: nil)
       params = { nonce: nonce }
 
-      debugger
-
       call(request_uri('v2', 'xrp_address'), 'POST', params)
     end
 
